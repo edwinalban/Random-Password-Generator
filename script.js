@@ -57,11 +57,22 @@ function generatePassword() {
     };
 
     if (lowercase === lowercaseChoice[0]) {
-      var lowercaseArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-      var lowercaseRandom = Math.floor(Math.random() * charLength);
-      console.log(lowercaseRandom, lowercaseArr.lowercaseRandom);
-    };
+      var lCArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+      for (var i = 0; i < charLength; i++) {
+      var lCRandom = Math.floor(Math.random() * charLength);
+      var lCRandomChoice = lCArr[lCRandom];
+        }
+      }
+      console.log(lCRandom, lCRandomChoice);
+    
+
+
+
+
 }
+
+
+
 
 
 
