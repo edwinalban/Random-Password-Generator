@@ -13,29 +13,118 @@
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+var specialCharacters = [
+  "@",
+  "%",
+  "+",
+  "\\",
+  "/",
+  "'",
+  "!",
+  "#",
+  "$",
+  "^",
+  "?",
+  ":",
+  ",",
+  ")",
+  "(",
+  "}",
+  "{",
+  "]",
+  "[",
+  "~",
+  "-",
+  "_",
+  ".",
+];
+
+var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+var lowerCasedCharacters = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+
+var upperCasedCharacters = [
+"A",
+"B",
+"C",
+"D",
+"E",
+"F",
+"G",
+"H",
+"I",
+"J",
+"K",
+"L",
+"M",
+"N",
+"O",
+"P",
+"Q",
+"R",
+"S",
+"T",
+"U",
+"V",
+"W",
+"X",
+"Y",
+"Z"
+];
+
+var possibleCharacters = []
+
 function generatePassword() {
   
     var charLength = prompt("Please choose the number of characters for your password. It must be at least 8 and no more than 128 characters");
     var confirmLength = confirm("Your password will be " + charLength + " characters.");
     console.log(charLength);
 
-    var lowercase = prompt("Do you want to include lowercase letters? Please type 'Yes', or 'No'.").toLowerCase();
-    var lowercaseChoice = ["yes", "no"];
+    var lowercased = prompt("Do you want to include lowercased letters? Please type 'Yes', or 'No'.").toLowerCase();
+    var lowercasedChoice = ["yes", "no"];
     console.log(lowercase);
 
-      if (lowercase === lowercaseChoice[0]) {
-        var lowercaseConfirm = confirm("Lowercase letters will be used!")
+      if (lowercased === lowercasedChoice[0]) {
+        var lowercaseConfirm = confirm("Lowercased letters will be used!")
+        possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
     } else {
-        var lowercaseDeny = confirm("Lowercase letters will not be used.")
+        var lowercaseDeny = confirm("Lowercased letters will not be used.")
     };
 
-    var uppercase = prompt("Do you want to include uppercase letters? Please type 'Yes', or 'No'.").toLowerCase();
-    var uppercaseChoice = ["yes", "no"];
-    console.log(uppercase);
-      if (uppercase === uppercaseChoice[0]) {
-        var uppercaseConfirm = confirm("Uppercase letters will be used!")
+    var uppercased = prompt("Do you want to include uppercased letters? Please type 'Yes', or 'No'.").toLowerCase();
+    var uppercasedChoice = ["yes", "no"];
+    console.log(uppercased);
+      if (uppercased === uppercasedChoice[0]) {
+        var uppercaseConfirm = confirm("Uppercased letters will be used!")
     } else {
-      var uppercaseDeny = confirm("Uppercase letters will not be used.")
+      var uppercaseDeny = confirm("Uppercased letters will not be used.")
     };
 
     var numeric = prompt("Do you want to include numbers? Please type 'Yes', or 'No'.").toLowerCase();
@@ -56,19 +145,16 @@ function generatePassword() {
       var specialDeny = confirm("Special characters will not be used.")
     };
 
-    if (lowercase === lowercaseChoice[0]) {
-      var lCArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-      for (var i = 0; i < charLength; i++) {
-      var lCRandom = Math.floor(Math.random() * charLength);
-      var lCRandomChoice = lCArr[lCRandom];
-        }
-      }
-      console.log(lCRandom, lCRandomChoice);
-    
+   console.log(possibleCharacters);
+    var password = [];
 
+    for (var i =0; i < charLength; i++) {
+      var randIndex = Math.floor(Math.random() * possibleCharacters.length);
+      var randElement = possibleCharacters[randIndex];
 
-
-
+      password.push(randElement);
+    }
+    console.log(password);
 }
 
 
@@ -80,9 +166,4 @@ function generatePassword() {
 
 // invalid entry alerts
 // var notEnough = alert("oops " + charLength + " is fewer than 8, please try again.")
-
-// var lowercaseArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-// var uppercaseArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-// var numericArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-// var specialArr = ["!", "@", "#", "$", "%", "^", "&", "*", ",", "."]
 
