@@ -133,18 +133,18 @@ function generatePassword() {
     
     do {
       if (lowercased === lowercasedChoice[0]) {
-        var lowercaseConfirm = confirm("Lowercased letters will be used!");
-        possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
+        var lowercasedConfirm = confirm("Lowercased letters will be used!")
+        possibleCharacters = possibleCharacters.concat(lowerCasedCharacters)
       } else if (lowercased === lowercasedChoice[1]) {
-          var lowercaseDeny = confirm("Lowercased letters will not be used.");
+          var lowercasedDeny = confirm("Lowercased letters will not be used.")
       } else {
-          var invalidEntry = alert("Invalid input. Please enter 'Yes', or 'No'.")
+          var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.")
           var lowercased = prompt("Do you want to include lowercased letters? Please type 'Yes', or 'No'.").toLowerCase()
             if (lowercased === lowercasedChoice[0]) {
-              var lowercaseConfirm = confirm("Lowercased letters will be used!");
-              possibleCharacters = possibleCharacters.concat(lowerCasedCharacters); 
+              var lowercasedConfirm = confirm("Lowercased letters will be used!")
+              possibleCharacters = possibleCharacters.concat(lowerCasedCharacters)
             } else if (lowercased === lowercasedChoice[1]) {
-              var lowercaseDeny = confirm("Lowercased letters will not be used.");
+              var lowercasedDeny = confirm("Lowercased letters will not be used.")
             }
         } 
     } while (lowercased != lowercasedChoice[0] && lowercased != lowercasedChoice[1]);
@@ -153,13 +153,26 @@ function generatePassword() {
 
     var uppercased = prompt("Do you want to include uppercased letters? Please type 'Yes', or 'No'.").toLowerCase();
     var uppercasedChoice = ["yes", "no"];
-    console.log(uppercased);
+    
+    do {
       if (uppercased === uppercasedChoice[0]) {
-        var uppercaseConfirm = confirm("Uppercased letters will be used!");
-        possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
+        var uppercasedConfirm = confirm("Uppercased letters will be used!")
+        possibleCharacters = possibleCharacters.concat(upperCasedCharacters)
+    } else if (uppercased === uppercasedChoice[1]) {
+      var uppercasedDeny = confirm("Uppercased letters will not be used.")
     } else {
-      var uppercaseDeny = confirm("Uppercased letters will not be used.");
-    };
+      var invalidEntry = alert("invalid input. Please enter 'Yes' or 'No'.")
+      var uppercased = prompt("Do you want to include uppercased letters? Please type 'Yes', or 'No'.").toLowerCase()
+        if (uppercased === uppercasedChoice[0]) {
+          var uppercasedConfirm = confirm("Uppercased letters will be used!")
+          possibleCharacters = possibleCharacters.concat(upperCasedCharacters)
+        } else if (uppercased === uppercasedChoice[1]) {
+          var uppercasedDeny = confirm("Uppercased letters will not be used.")
+        }
+      }
+    } while (uppercased != uppercasedChoice[0] && uppercased != uppercasedChoice[1]);
+
+    console.log(uppercased);
 
     var numeric = prompt("Do you want to include numbers? Please type 'Yes', or 'No'.").toLowerCase();
     var numericChoice = ["yes", "no"];
@@ -181,7 +194,7 @@ function generatePassword() {
       var specialDeny = confirm("Special characters will not be used.");
     };
 
-   console.log(possibleCharacters);
+    console.log(possibleCharacters);
 
     var password = [];
 
