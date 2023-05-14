@@ -130,14 +130,26 @@ function generatePassword() {
 
     var lowercased = prompt("Do you want to include lowercased letters? Please type 'Yes', or 'No'.").toLowerCase();
     var lowercasedChoice = ["yes", "no"];
-    console.log(lowercased);
-
+    
+    do {
       if (lowercased === lowercasedChoice[0]) {
         var lowercaseConfirm = confirm("Lowercased letters will be used!");
         possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
-    } else {
-        var lowercaseDeny = confirm("Lowercased letters will not be used.");
-    };
+      } else if (lowercased === lowercasedChoice[1]) {
+          var lowercaseDeny = confirm("Lowercased letters will not be used.");
+      } else {
+          var invalidEntry = alert("Invalid input. Please enter 'Yes', or 'No'.")
+          var lowercased = prompt("Do you want to include lowercased letters? Please type 'Yes', or 'No'.").toLowerCase()
+            if (lowercased === lowercasedChoice[0]) {
+              var lowercaseConfirm = confirm("Lowercased letters will be used!");
+              possibleCharacters = possibleCharacters.concat(lowerCasedCharacters); 
+            } else if (lowercased === lowercasedChoice[1]) {
+              var lowercaseDeny = confirm("Lowercased letters will not be used.");
+            }
+        } 
+    } while (lowercased != lowercasedChoice[0] && lowercased != lowercasedChoice[1]);
+
+    console.log(lowercased);
 
     var uppercased = prompt("Do you want to include uppercased letters? Please type 'Yes', or 'No'.").toLowerCase();
     var uppercasedChoice = ["yes", "no"];
@@ -184,14 +196,3 @@ function generatePassword() {
     console.log(password.join(''));
     return password.join('');
 };
-
-
-
-
-
-
-
-
-// invalid entry alerts
-// var notEnough = alert("oops " + charLength + " is fewer than 8, please try again.")
-
