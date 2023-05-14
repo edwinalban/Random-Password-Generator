@@ -137,15 +137,15 @@ function generatePassword() {
         possibleCharacters = possibleCharacters.concat(lowerCasedCharacters)
       } else if (lowercased === lowercasedChoice[1]) {
           var lowercasedDeny = confirm("Lowercased letters will not be used.")
-      } else {
-          var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.")
-          var lowercased = prompt("Do you want to include lowercased letters? Please type 'Yes', or 'No'.").toLowerCase()
-            if (lowercased === lowercasedChoice[0]) {
-              var lowercasedConfirm = confirm("Lowercased letters will be used!")
-              possibleCharacters = possibleCharacters.concat(lowerCasedCharacters)
-            } else if (lowercased === lowercasedChoice[1]) {
-              var lowercasedDeny = confirm("Lowercased letters will not be used.")
-            }
+        } else {
+            var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.")
+            var lowercased = prompt("Do you want to include lowercased letters? Please type 'Yes', or 'No'.").toLowerCase()
+              if (lowercased === lowercasedChoice[0]) {
+                var lowercasedConfirm = confirm("Lowercased letters will be used!")
+                possibleCharacters = possibleCharacters.concat(lowerCasedCharacters)
+              } else if (lowercased === lowercasedChoice[1]) {
+                  var lowercasedDeny = confirm("Lowercased letters will not be used.")
+                }
         } 
     } while (lowercased != lowercasedChoice[0] && lowercased != lowercasedChoice[1]);
 
@@ -158,31 +158,44 @@ function generatePassword() {
       if (uppercased === uppercasedChoice[0]) {
         var uppercasedConfirm = confirm("Uppercased letters will be used!")
         possibleCharacters = possibleCharacters.concat(upperCasedCharacters)
-    } else if (uppercased === uppercasedChoice[1]) {
+      } else if (uppercased === uppercasedChoice[1]) {
       var uppercasedDeny = confirm("Uppercased letters will not be used.")
-    } else {
-      var invalidEntry = alert("invalid input. Please enter 'Yes' or 'No'.")
-      var uppercased = prompt("Do you want to include uppercased letters? Please type 'Yes', or 'No'.").toLowerCase()
-        if (uppercased === uppercasedChoice[0]) {
-          var uppercasedConfirm = confirm("Uppercased letters will be used!")
-          possibleCharacters = possibleCharacters.concat(upperCasedCharacters)
-        } else if (uppercased === uppercasedChoice[1]) {
-          var uppercasedDeny = confirm("Uppercased letters will not be used.")
+      } else {
+          var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.")
+          var uppercased = prompt("Do you want to include uppercased letters? Please type 'Yes', or 'No'.").toLowerCase()
+            if (uppercased === uppercasedChoice[0]) {
+              var uppercasedConfirm = confirm("Uppercased letters will be used!")
+              possibleCharacters = possibleCharacters.concat(upperCasedCharacters)
+            } else if (uppercased === uppercasedChoice[1]) {
+                var uppercasedDeny = confirm("Uppercased letters will not be used.")
+              }
         }
-      }
     } while (uppercased != uppercasedChoice[0] && uppercased != uppercasedChoice[1]);
 
     console.log(uppercased);
 
     var numeric = prompt("Do you want to include numbers? Please type 'Yes', or 'No'.").toLowerCase();
     var numericChoice = ["yes", "no"];
-    console.log(numeric);
+    
+    do {
       if (numeric === numericChoice[0]) {
-        var numericConfirm = confirm("Numbers will be used!");
-        possibleCharacters = possibleCharacters.concat(numericCharacters);
-    } else {
-      var numericDeny = confirm("Numbers will not be used.");
-    };
+        var numericConfirm = confirm("Numbers will be used!")
+        possibleCharacters = possibleCharacters.concat(numericCharacters)
+      } else if (numeric === numericChoice[1]) {
+      var numericDeny = confirm("Numbers will not be used.")
+      } else {
+          var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.")
+          var numeric = prompt("Do you want to include numbers? Please type 'Yes', or 'No'.").toLowerCase()
+            if (numeric === numericChoice[0]) {
+            var numericConfirm = confirm("Numbers will be used!")
+            possibleCharacters = possibleCharacters.concat(numericCharacters)
+            } else if (numeric === numericChoice[1]) {
+                var numericDeny = confirm("Numbers will not be used.")
+              }
+        }
+    } while (numeric != numericChoice[0] && numeric != numericChoice[1]);
+
+    console.log(numeric);
 
     var special = prompt("Do you want to include special characters? Please type 'Yes', or 'No'.").toLowerCase();
     var specialChoice = ["yes", "no"];
