@@ -115,6 +115,14 @@ function generatePassword() {
   var possibleCharacters = [];
 
     var charLength = prompt("Please choose the number of characters for your password. It must be at least 8 and no more than 128 characters");
+      
+    do {          
+      if (charLength < 8 || charLength > 128) {
+        var invalidEntry = alert("Password must be between 8 and 128 characters. Please enter a number between 8 and 128.")
+        var charLength = prompt("Please choose the number of characters for your password. It must be at least 8 and no more than 128 characters")
+      }      
+    } while (charLength <8 || charLength > 128);
+  
     var confirmLength = confirm("Your password will be " + charLength + " characters.");
     console.log(charLength);
 
