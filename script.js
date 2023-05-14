@@ -39,7 +39,18 @@ var specialCharacters = [
   ".",
 ];
 
-var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var numericCharacters = [
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+];
 
 var lowerCasedCharacters = [
   "a",
@@ -71,35 +82,35 @@ var lowerCasedCharacters = [
 ];
 
 var upperCasedCharacters = [
-"A",
-"B",
-"C",
-"D",
-"E",
-"F",
-"G",
-"H",
-"I",
-"J",
-"K",
-"L",
-"M",
-"N",
-"O",
-"P",
-"Q",
-"R",
-"S",
-"T",
-"U",
-"V",
-"W",
-"X",
-"Y",
-"Z"
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z"
 ];
 
-var possibleCharacters = []
+var possibleCharacters = [];
 
 function generatePassword() {
   
@@ -109,7 +120,7 @@ function generatePassword() {
 
     var lowercased = prompt("Do you want to include lowercased letters? Please type 'Yes', or 'No'.").toLowerCase();
     var lowercasedChoice = ["yes", "no"];
-    console.log(lowercase);
+    console.log(lowercased);
 
       if (lowercased === lowercasedChoice[0]) {
         var lowercaseConfirm = confirm("Lowercased letters will be used!")
@@ -123,6 +134,7 @@ function generatePassword() {
     console.log(uppercased);
       if (uppercased === uppercasedChoice[0]) {
         var uppercaseConfirm = confirm("Uppercased letters will be used!")
+        possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
     } else {
       var uppercaseDeny = confirm("Uppercased letters will not be used.")
     };
@@ -132,6 +144,7 @@ function generatePassword() {
     console.log(numeric);
       if (numeric === numericChoice[0]) {
         var numericConfirm = confirm("Numbers will be used!")
+        possibleCharacters = possibleCharacters.concat(numericCharacters);
     } else {
       var numericDeny = confirm("Numbers will not be used.")
     };
@@ -141,14 +154,16 @@ function generatePassword() {
     console.log(special);
       if (special === specialChoice[0]) {
         var specialConfirm = confirm("Special characters will be used!")
+        possibleCharacters = possibleCharacters.concat(specialCharacters);
     } else {
       var specialDeny = confirm("Special characters will not be used.")
     };
 
    console.log(possibleCharacters);
+
     var password = [];
 
-    for (var i =0; i < charLength; i++) {
+    for (var i = 0; i < charLength; i++) {
       var randIndex = Math.floor(Math.random() * possibleCharacters.length);
       var randElement = possibleCharacters[randIndex];
 
