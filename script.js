@@ -187,8 +187,8 @@ function generatePassword() {
           var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.")
           var numeric = prompt("Do you want to include numbers? Please type 'Yes', or 'No'.").toLowerCase()
             if (numeric === numericChoice[0]) {
-            var numericConfirm = confirm("Numbers will be used!")
-            possibleCharacters = possibleCharacters.concat(numericCharacters)
+              var numericConfirm = confirm("Numbers will be used!")
+              possibleCharacters = possibleCharacters.concat(numericCharacters)
             } else if (numeric === numericChoice[1]) {
                 var numericDeny = confirm("Numbers will not be used.")
               }
@@ -199,13 +199,26 @@ function generatePassword() {
 
     var special = prompt("Do you want to include special characters? Please type 'Yes', or 'No'.").toLowerCase();
     var specialChoice = ["yes", "no"];
-    console.log(special);
+    
+    do {
       if (special === specialChoice[0]) {
-        var specialConfirm = confirm("Special characters will be used!");
-        possibleCharacters = possibleCharacters.concat(specialCharacters);
-    } else {
-      var specialDeny = confirm("Special characters will not be used.");
-    };
+        var specialConfirm = confirm("Special characters will be used!")
+        possibleCharacters = possibleCharacters.concat(specialCharacters)
+      } else if (special === specialChoice[1]) {
+      var specialDeny = confirm("Special characters will not be used.")
+      } else {
+          var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.")
+          var special = prompt("Do you want to include special characters? Please type 'Yes', or 'No'.").toLowerCase()
+            if (special === specialChoice[0]) {
+              var specialConfirm = confirm("Special characters will be used!")
+              possibleCharacters = possibleCharacters.concat(specialCharacters)
+            } else if (numeric === numericChoice[1]) {
+                var specialDeny = confirm("Special characters will not be used.")
+              }
+        }
+    } while (special != specialChoice[0] && special != specialChoice[1]);
+
+    console.log(special);
 
     console.log(possibleCharacters);
 
@@ -217,6 +230,7 @@ function generatePassword() {
 
       password.push(randElement);
     }
+    
     console.log(password);
     password.join('');
     console.log(password.join(''));
