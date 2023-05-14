@@ -115,16 +115,18 @@ function generatePassword() {
   var possibleCharacters = [];
 
     var charLength = prompt("Please choose the number of characters for your password. It must be at least 8 and no more than 128 characters");
-      
+    charLength = parseInt(charLength);
     do {          
-      if (charLength < 8 || charLength > 128) {
+      if (charLength < 8 || charLength > 128 || isNaN(charLength)) {
         var invalidEntry = alert("Password must be between 8 and 128 characters. Please enter a number between 8 and 128.")
         var charLength = prompt("Please choose the number of characters for your password. It must be at least 8 and no more than 128 characters")
+        charLength = parseInt(charLength)
       }      
-    } while (charLength <8 || charLength > 128);
+    } while (charLength < 8 || charLength > 128 || isNaN(charLength));
   
     var confirmLength = confirm("Your password will be " + charLength + " characters.");
     console.log(charLength);
+    console.log(typeof charLength);
 
     var lowercased = prompt("Do you want to include lowercased letters? Please type 'Yes', or 'No'.").toLowerCase();
     var lowercasedChoice = ["yes", "no"];
@@ -180,7 +182,7 @@ function generatePassword() {
     console.log(password);
     password.join('');
     console.log(password.join(''));
-    password = password.join('');
+    return password.join('');
 };
 
 
