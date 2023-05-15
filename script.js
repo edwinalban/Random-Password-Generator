@@ -129,10 +129,10 @@ function generatePassword() {
 // Creates loop to limit user input to prompt to a number between 8 and 128
     do {          
       if (charLength < 8 || charLength > 128 || isNaN(charLength)) {
-        var invalidEntry = alert("Password must be between 8 and 128 characters. Please enter a number between 8 and 128.")
-        var charLength = prompt("Please choose the number of characters for your password. It must be at least 8 and no more than 128 characters")
-        charLength = parseInt(charLength)
-      }      
+        var invalidEntry = alert("Password must be between 8 and 128 characters. Please enter a number between 8 and 128.");
+        var charLength = prompt("Please choose the number of characters for your password. It must be at least 8 and no more than 128 characters");
+        charLength = parseInt(charLength);
+      }
     } while (charLength < 8 || charLength > 128 || isNaN(charLength));
 
 // Confirms user input for password length
@@ -152,18 +152,18 @@ function generatePassword() {
 // If user input is not "yes" or "no", alerts user of invalid input and prompts for "yes" or "no" input
     do {
       if (lowercased === lowercasedChoice[0]) {
-        var lowercasedConfirm = confirm("Lowercased letters will be used!")
-        possibleCharacters = possibleCharacters.concat(lowerCasedCharacters)
+        var lowercasedConfirm = confirm("Lowercased letters will be used!");
+        possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
       } else if (lowercased === lowercasedChoice[1]) {
-          var lowercasedDeny = confirm("Lowercased letters will not be used.")
+          var lowercasedDeny = confirm("Lowercased letters will not be used.");
         } else {
-            var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.")
-            var lowercased = prompt("Do you want to include lowercased letters? Please type 'Yes', or 'No'.").toLowerCase()
+            var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.");
+            var lowercased = prompt("Do you want to include lowercased letters? Please type 'Yes', or 'No'.").toLowerCase();
               if (lowercased === lowercasedChoice[0]) {
-                var lowercasedConfirm = confirm("Lowercased letters will be used!")
-                possibleCharacters = possibleCharacters.concat(lowerCasedCharacters)
+                var lowercasedConfirm = confirm("Lowercased letters will be used!");
+                possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
               } else if (lowercased === lowercasedChoice[1]) {
-                  var lowercasedDeny = confirm("Lowercased letters will not be used.")
+                  var lowercasedDeny = confirm("Lowercased letters will not be used.");
                 }
         } 
     } while (lowercased != lowercasedChoice[0] && lowercased != lowercasedChoice[1]);
@@ -181,18 +181,18 @@ function generatePassword() {
 // If input is not "yes" or "no", alerts user of invalid input and prompts for "yes" or "no" input
     do {
       if (uppercased === uppercasedChoice[0]) {
-        var uppercasedConfirm = confirm("Uppercased letters will be used!")
-        possibleCharacters = possibleCharacters.concat(upperCasedCharacters)
+        var uppercasedConfirm = confirm("Uppercased letters will be used!");
+        possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
       } else if (uppercased === uppercasedChoice[1]) {
-      var uppercasedDeny = confirm("Uppercased letters will not be used.")
+      var uppercasedDeny = confirm("Uppercased letters will not be used.");
       } else {
-          var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.")
-          var uppercased = prompt("Do you want to include uppercased letters? Please type 'Yes', or 'No'.").toLowerCase()
+          var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.");
+          var uppercased = prompt("Do you want to include uppercased letters? Please type 'Yes', or 'No'.").toLowerCase();
             if (uppercased === uppercasedChoice[0]) {
-              var uppercasedConfirm = confirm("Uppercased letters will be used!")
-              possibleCharacters = possibleCharacters.concat(upperCasedCharacters)
+              var uppercasedConfirm = confirm("Uppercased letters will be used!");
+              possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
             } else if (uppercased === uppercasedChoice[1]) {
-                var uppercasedDeny = confirm("Uppercased letters will not be used.")
+                var uppercasedDeny = confirm("Uppercased letters will not be used.");
               }
         }
     } while (uppercased != uppercasedChoice[0] && uppercased != uppercasedChoice[1]);
@@ -210,18 +210,18 @@ function generatePassword() {
 // If input is not "yes" or "no", alerts user of invalid input and prompts for "yes" or "no" input
     do {
       if (numeric === numericChoice[0]) {
-        var numericConfirm = confirm("Numbers will be used!")
-        possibleCharacters = possibleCharacters.concat(numericCharacters)
+        var numericConfirm = confirm("Numbers will be used!");
+        possibleCharacters = possibleCharacters.concat(numericCharacters);
       } else if (numeric === numericChoice[1]) {
-      var numericDeny = confirm("Numbers will not be used.")
+      var numericDeny = confirm("Numbers will not be used.");
       } else {
-          var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.")
-          var numeric = prompt("Do you want to include numbers? Please type 'Yes', or 'No'.").toLowerCase()
+          var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.");
+          var numeric = prompt("Do you want to include numbers? Please type 'Yes', or 'No'.").toLowerCase();
             if (numeric === numericChoice[0]) {
-              var numericConfirm = confirm("Numbers will be used!")
-              possibleCharacters = possibleCharacters.concat(numericCharacters)
+              var numericConfirm = confirm("Numbers will be used!");
+              possibleCharacters = possibleCharacters.concat(numericCharacters);
             } else if (numeric === numericChoice[1]) {
-                var numericDeny = confirm("Numbers will not be used.")
+                var numericDeny = confirm("Numbers will not be used.");
               }
         }
     } while (numeric != numericChoice[0] && numeric != numericChoice[1]);
@@ -239,21 +239,31 @@ function generatePassword() {
 // If input is not "yes" or "no", alerts user of invalid input and prompts for "yes" or "no" input
     do {
       if (special === specialChoice[0]) {
-        var specialConfirm = confirm("Special characters will be used!")
-        possibleCharacters = possibleCharacters.concat(specialCharacters)
+        var specialConfirm = confirm("Special characters will be used!");
+        possibleCharacters = possibleCharacters.concat(specialCharacters);
       } else if (special === specialChoice[1]) {
-      var specialDeny = confirm("Special characters will not be used.")
+      var specialDeny = confirm("Special characters will not be used.");
       } else {
-          var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.")
-          var special = prompt("Do you want to include special characters? Please type 'Yes', or 'No'.").toLowerCase()
+          var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.");
+          var special = prompt("Do you want to include special characters? Please type 'Yes', or 'No'.").toLowerCase();
             if (special === specialChoice[0]) {
-              var specialConfirm = confirm("Special characters will be used!")
-              possibleCharacters = possibleCharacters.concat(specialCharacters)
-            } else if (numeric === numericChoice[1]) {
-                var specialDeny = confirm("Special characters will not be used.")
+              var specialConfirm = confirm("Special characters will be used!");
+              possibleCharacters = possibleCharacters.concat(specialCharacters);
+            } else if (special === specialChoice[1]) {
+                var specialDeny = confirm("Special characters will not be used.");
               }
         }
     } while (special != specialChoice[0] && special != specialChoice[1]);
+
+    do {
+      if ((lowercasedChoice === [1]) && (uppercasedChoice === [1]) && (numericChoice === [1]) && (specialChoice === [1])) {
+        var noSelection = alert("No character types have been selected for password generation. At least one character type must be selected.");
+        var special = prompt("Do you want to include special characters? Please type 'Yes'.").toLowerCase();
+      } else if (special === specialChoice [0]) {
+        var specialConfirm = confirm("Special characters will be used!");
+        possibleCharacters = possibleCharacters.concat(specialCharacters);
+      }
+    } while (specialChoice === [1]);
 
 // Displays user input for special prompt in console log
     console.log(special);
@@ -271,7 +281,7 @@ function generatePassword() {
 
 // Pushes randomly selected characters to password array
       password.push(randElement);
-    }
+    };
 
 // Displays password array in console log
     console.log(password);
@@ -284,4 +294,4 @@ function generatePassword() {
 
 // Displays password in #password input field on page
     return password.join('');
-};
+}
