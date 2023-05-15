@@ -256,7 +256,7 @@ function generatePassword() {
     } while (special != specialChoice[0] && special != specialChoice[1]);
 
     do {
-      if ((lowercasedChoice === [1]) && (uppercasedChoice === [1]) && (numericChoice === [1]) && (specialChoice === [1])) {
+      if ((lowercased === lowercasedChoice[1]) && (uppercased === uppercasedChoice[1]) && (numeric === numericChoice[1]) && (special === specialChoice[1])) {
         var noSelection = alert("No character types have been selected for password generation. At least one character type must be selected.");
         var special = prompt("Do you want to include special characters? Please type 'Yes'.").toLowerCase();
       } else if (special === specialChoice [0]) {
