@@ -19,5 +19,5 @@ N/A
 
 The project can be used to practice setting up arrays to be used within the function, displaying prompts, confirms, and alerts via JavaScript, concatenating information into a single location for review/selection, and randomly choosing values.
 
-![alt text](assets/no-password.png)
-![alt text](assets/password-generated.png)
+![alt text](Assets/no-password.png)
+![alt text](Assets/password-generated.png)
