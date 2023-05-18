@@ -146,14 +146,27 @@ function generatePassword() {
   var lowercased = prompt("Do you want to include lowercased letters? Please type 'Yes', or 'No'.").toLowerCase();
   var lowercasedChoice = ["yes", "no"];
 
+// Creates loop to limit user input to prompt to "yes" or "no"
 // If user input is "yes", confirms lowercased letters will be used and adds lowercased characters array to possible characters in password array
 // If user input is "no", confirms lowercased characters will not be used
-  if (lowercased === lowercasedChoice[0]) {
-    var lowercasedConfirm = confirm("Lowercased letters will be used!");
-    possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
-  } else {
-      var lowercasedDeny = confirm("Lowercased letters will not be used.");
-    };
+// If user input is not "yes" or "no", alerts user of invalid input and prompts for "yes" or "no" input
+  do {
+    if (lowercased === lowercasedChoice[0]) {
+      var lowercasedConfirm = confirm("Lowercased letters will be used!");
+      possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
+    } else if (lowercased === lowercasedChoice[1]) {
+        var lowercasedDeny = confirm("Lowercased letters will not be used.");
+      } else {
+          var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.");
+          var lowercased = prompt("Do you want to include lowercased letters? Please type 'Yes', or 'No'.").toLowerCase();
+            if (lowercased === lowercasedChoice[0]) {
+              var lowercasedConfirm = confirm("Lowercased letters will be used!");
+              possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
+            } else if (lowercased === lowercasedChoice[1]) {
+                var lowercasedDeny = confirm("Lowercased letters will not be used.");
+              }
+        } 
+  } while (lowercased != lowercasedChoice[0] && lowercased != lowercasedChoice[1]);
 
 // Displays user input for lowercased prompt in console log
   console.log(lowercased);
@@ -162,14 +175,27 @@ function generatePassword() {
   var uppercased = prompt("Do you want to include uppercased letters? Please type 'Yes', or 'No'.").toLowerCase();
   var uppercasedChoice = ["yes", "no"];
     
+// Creates loop to limit user input to prompt to "yes" or "no"
 // If input is "yes", confirms uppercased letters will be used and adds uppercased characters array to possible characters in password array
 // If input is "no", confirms uppercased characters will not be used
-  if (uppercased === uppercasedChoice[0]) {
-    var uppercasedConfirm = confirm("Uppercased letters will be used!");
-    possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
-  } else {
-      var uppercasedDeny = confirm("Uppercased letters will not be used.");
-    };
+// If input is not "yes" or "no", alerts user of invalid input and prompts for "yes" or "no" input
+  do {
+    if (uppercased === uppercasedChoice[0]) {
+      var uppercasedConfirm = confirm("Uppercased letters will be used!");
+      possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
+    } else if (uppercased === uppercasedChoice[1]) {
+        var uppercasedDeny = confirm("Uppercased letters will not be used.");
+      } else {
+          var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.");
+          var uppercased = prompt("Do you want to include uppercased letters? Please type 'Yes', or 'No'.").toLowerCase();
+            if (uppercased === uppercasedChoice[0]) {
+              var uppercasedConfirm = confirm("Uppercased letters will be used!");
+              possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
+            } else if (uppercased === uppercasedChoice[1]) {
+                var uppercasedDeny = confirm("Uppercased letters will not be used.");
+              }
+        }
+  } while (uppercased != uppercasedChoice[0] && uppercased != uppercasedChoice[1]);
 
 // Displays user input for uppercased prompt in console log
   console.log(uppercased);
@@ -178,14 +204,27 @@ function generatePassword() {
   var numeric = prompt("Do you want to include numbers? Please type 'Yes', or 'No'.").toLowerCase();
   var numericChoice = ["yes", "no"];
     
+// Creates loop to limit user input to prompt to "yes" or "no"
 // If input is "yes", confirms numbers will be used and adds numeric array to possible characters in password array
 // If input is "no", confirms numbers will not be used
-  if (numeric === numericChoice[0]) {
-    var numericConfirm = confirm("Numbers will be used!");
-    possibleCharacters = possibleCharacters.concat(numericCharacters);
-  } else {
-      var numericDeny = confirm("Numbers will not be used.");
-    };
+// If input is not "yes" or "no", alerts user of invalid input and prompts for "yes" or "no" input
+  do {
+    if (numeric === numericChoice[0]) {
+      var numericConfirm = confirm("Numbers will be used!");
+      possibleCharacters = possibleCharacters.concat(numericCharacters);
+    } else if (numeric === numericChoice[1]) {
+        var numericDeny = confirm("Numbers will not be used.");
+      } else {
+          var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.");
+          var numeric = prompt("Do you want to include numbers? Please type 'Yes', or 'No'.").toLowerCase();
+            if (numeric === numericChoice[0]) {
+              var numericConfirm = confirm("Numbers will be used!");
+              possibleCharacters = possibleCharacters.concat(numericCharacters);
+            } else if (numeric === numericChoice[1]) {
+                var numericDeny = confirm("Numbers will not be used.");
+              }
+        }
+  } while (numeric != numericChoice[0] && numeric != numericChoice[1]);
 
 // Displays user input for numeric prompt in console log
   console.log(numeric);
@@ -194,17 +233,31 @@ function generatePassword() {
   var special = prompt("Do you want to include special characters? Please type 'Yes', or 'No'.").toLowerCase();
   var specialChoice = ["yes", "no"];
     
+// Creates loop to limit user input to prompt to "yes" or "no"
 // If input is "yes", confirms special characters will be used and adds special characters array to possible characters in password array
 // If input is "no", confirms special characters will not be used
-  if (special === specialChoice[0]) {
-    var specialConfirm = confirm("Special characters will be used!");
-    possibleCharacters = possibleCharacters.concat(specialCharacters);
-  } else {
-      var specialDeny = confirm("Special characters will not be used.");
-    };
+// If input is not "yes" or "no", alerts user of invalid input and prompts for "yes" or "no" input
+  do {
+    if (special === specialChoice[0]) {
+      var specialConfirm = confirm("Special characters will be used!");
+      possibleCharacters = possibleCharacters.concat(specialCharacters);
+    } else if (special === specialChoice[1]) {
+        var specialDeny = confirm("Special characters will not be used.");
+      } else {
+          var invalidEntry = alert("Invalid input. Please enter 'Yes' or 'No'.");
+          var special = prompt("Do you want to include special characters? Please type 'Yes', or 'No'.").toLowerCase();
+            if (special === specialChoice[0]) {
+              var specialConfirm = confirm("Special characters will be used!");
+              possibleCharacters = possibleCharacters.concat(specialCharacters);
+            } else if (special === specialChoice[1]) {
+                var specialDeny = confirm("Special characters will not be used.");
+              }
+        }
+  } while (special != specialChoice[0] && special != specialChoice[1]);
 
 // Displays user input for special prompt in console log
   console.log(special);
+    // console.log(selectedCharacterTypes);
 
 // If possibleCharacters array is empty, alerts user that no character types have been selected, runs function again, otherwise generates password
   if (possibleCharacters.length === 0) {
@@ -212,31 +265,32 @@ function generatePassword() {
     generatePassword();
   } else {
 
+    // console.log(hasCharacterType);
 // Displays all possible characters from which random selector can choose
-      console.log(possibleCharacters);
+    console.log(possibleCharacters);
 
 // Creates empty array to which random selector can push selected elements
-      var password = [];
+    var password = [];
 
 // Randomly selects characters from possible characters array until user input for password length is reached
-        for (var i = 0; i < charLength; i++) {
-          var randIndex = Math.floor(Math.random() * possibleCharacters.length);
-          var randElement = possibleCharacters[randIndex];
+    for (var i = 0; i < charLength; i++) {
+      var randIndex = Math.floor(Math.random() * possibleCharacters.length);
+      var randElement = possibleCharacters[randIndex];
 
 // Pushes randomly selected characters to password array
-          password.push(randElement);
-        };
+      password.push(randElement);
+    };
 
 // Displays password array in console log
-          console.log(password);
+    console.log(password);
 
 // Joins password array elements in a string with no separating characters (e.g. commas, hyphens, brackets, etc.)
-          password.join('');
+    password.join('');
 
 // Displays password after join
-          console.log(password.join(''));
+    console.log(password.join(''));
 
 // Displays password in #password input field on page
-          return password.join('');
-        };
-};
+    return password.join('');
+  }
+}
