@@ -9,7 +9,7 @@ Displaying alerts when specific/necessary criteria has not been selected by the 
 Utilizing the push and join methods in order to update an array and display its values as a string with no separators between values.
 This project can be found here: 
 
-
+https://edwinalban.github.io/Random-Password-Generator/
 
 ## Installation
 
